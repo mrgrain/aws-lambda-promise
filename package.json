@@ -1,5 +1,5 @@
 {
-  "name": "lambda-promise",
+  "name": "aws-lambda-promise",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
