@@ -8,8 +8,6 @@
  * @returns {Function}
  */
 module.exports = function (file, name) {
-    const handler = require(file)[name];
-
     /**
      * Run the given handler.
      *
@@ -18,6 +16,10 @@ module.exports = function (file, name) {
      * @returns {Promise}
      */
     return function (event, context) {
+        // create handler only once it's executed
+        const handler = require(file)[name];
+
+        // Setup and return promise
         return new Promise(function (resolve, reject) {
             handler(event, context, function (err, result) {
                 if (err) {
